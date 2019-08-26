@@ -1,4 +1,4 @@
-package programming_problems.amazon;
+package problems.amazon;
 
 import java.io.BufferedReader;
 import java.io.IOException;

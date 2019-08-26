@@ -1,4 +1,4 @@
-package programming_problems.easy;
+package problems.easy;
 
 public class Seasons {
 

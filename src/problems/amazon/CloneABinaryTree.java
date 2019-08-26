@@ -1,4 +1,4 @@
-package programming_problems.amazon;
+package problems.amazon;
 
 public class CloneABinaryTree {
 	

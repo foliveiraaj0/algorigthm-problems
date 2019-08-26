@@ -1,4 +1,4 @@
-package programming_problems.project_euller;
+package problems.project_euller;
 
 import utils.PrimeUtils;
 
