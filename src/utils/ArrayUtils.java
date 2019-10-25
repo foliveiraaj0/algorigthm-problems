@@ -130,16 +130,11 @@ public class ArrayUtils {
 
 		int N = m.length;
 
+		String[] values = s.split(""+separator);
+		
 		for (int j = 0; j < N; j++) {
 			for (int k = 0; k < N; k++) {
-				int index = s.indexOf(separator);
-				if (index != -1) {
-					m[j][k] = Integer.parseInt(s.substring(0, index));
-					s = s.substring(index + 1);
-				} else {
-					m[j][k] = Integer.parseInt(s.substring(0));
-					break;
-				}
+				m[j][k] = Integer.parseInt(values[j*N + k]);
 			}
 		}
 	}
