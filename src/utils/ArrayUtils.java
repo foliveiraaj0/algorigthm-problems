@@ -10,6 +10,20 @@ import org.junit.jupiter.api.Test;
 
 public class ArrayUtils {
 
+	public static int[] combine(int[] a, int[] b) {
+		int[] r = new int[a.length + b.length];
+		System.arraycopy(a, 0, r, 0, a.length);
+		System.arraycopy(b, 0, r, a.length, b.length);
+		return r;
+	}
+	
+	public static Integer[] combine(Integer[] a, Integer[] b) {
+		Integer[] r = new Integer[a.length + b.length];
+		System.arraycopy(a, 0, r, 0, a.length);
+		System.arraycopy(b, 0, r, a.length, b.length);
+		return r;
+	}
+	
 	public static int[] toIntArray(List<Integer> list) {
 		int[] ret = new int[list.size()];
 		for (int i = 0; i < ret.length; i++) {
@@ -24,6 +38,13 @@ public class ArrayUtils {
 			ret[i] = list.get(i);
 		}
 		return ret;
+	}
+
+	public static void printInt(int[] m) {
+		for (int i = 0; i < m.length; i++) {
+			System.out.print(m[i] + " ");
+		}
+		System.out.println();
 	}
 
 	public static void printInt(int[][] m) {
@@ -97,7 +118,8 @@ public class ArrayUtils {
 				if (isForbidenValue(forbidenValues, posValue)) {
 					return null;
 				}
-			}			return new int[] { downPos, pos[1] };
+			}
+			return new int[] { downPos, pos[1] };
 		}
 		return null;
 	}
@@ -130,13 +152,32 @@ public class ArrayUtils {
 
 		int N = m.length;
 
-		String[] values = s.split(""+separator);
-		
+		String[] values = s.split("" + separator);
+
 		for (int j = 0; j < N; j++) {
 			for (int k = 0; k < N; k++) {
-				m[j][k] = Integer.parseInt(values[j*N + k]);
+				m[j][k] = Integer.parseInt(values[j * N + k]);
 			}
 		}
+	}
+
+	public static boolean compare(int[] a, int[] b) {
+
+		if (a == null || b == null) {
+			return false;
+		}
+
+		if (a.length != b.length) {
+			return false;
+		}
+
+		for (int i = 0; i < b.length; i++) {
+			if (a[i] != b[i]) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	@Test
